@@ -1,17 +1,10 @@
-# Welcome to MkDocs
+# Code for the paper Integrating Knowledge Compilation with Reinforcement Learning for Routes
+    Published in International Conference on Automated Planning and Scheduling (ICAPS) 2021
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Prerequisites:
 
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Running the code
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Organization
