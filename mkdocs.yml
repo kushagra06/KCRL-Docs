@@ -1,0 +1,5 @@
+site_name: Integrating Knowledge Compilation with RL
+site_url: https://kushagra06.github.io/icaps21-docs
+
+theme:
+  name: material
