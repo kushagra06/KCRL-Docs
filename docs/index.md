@@ -4,8 +4,8 @@
 ## Prerequisites
 * Python 3 (>=3.5)
 * Networkx
-* Graphillion
-* PySDD
+* Graphillion. Code and installation procedure [here](https://github.com/takemaru/graphillion)
+* PySDD 
 
 ## Running the code
 
