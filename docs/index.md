@@ -11,9 +11,9 @@
 * [Graphillion](https://github.com/takemaru/graphillion) 
 * [PySDD](https://github.com/wannesm/PySDD)
 * To install prerequisites in bash 
-`
+```
 bash install.sh
-`
+```
 
 ## Running the code
 
