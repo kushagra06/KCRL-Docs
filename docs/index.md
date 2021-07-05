@@ -16,7 +16,12 @@ bash install.sh
 ```
 
 ## Running the code
+To start the training process
+```
+python abc.py
+```
 
+## Generating the results
 
 ## Steps to generate an sdd for an open-grid 5x5 map
 * Using Graphillion generate sets of all paths i.e. a GraphSet or a zdd (e.g., using ./scripts/grid.py).
@@ -26,6 +31,5 @@ bash install.sh
 ### Add constraints
 * To add constraints (e.g., visiting some landmarks), generate another sdd using Graphillion.
 * To combine the main sdd (sdd1) with the constraint sdd (sdd2), conjoin them using the conjoin operation in PySDD. (E.g.,``sdd1.conjoin(sdd2)``)
-
 
 ## Organization
