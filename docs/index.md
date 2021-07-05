@@ -2,9 +2,9 @@
     Published in International Conference on Automated Planning and Scheduling (ICAPS) 2021
 
 ## Prerequisites
-* Python 3 (>=3.5)
-* Networkx
-* Graphillion. Code and installation procedure [here](https://github.com/takemaru/graphillion)
+* Python 2 (=2.7) and 3 (>=3.5)
+* Networkx 2.5
+* [Graphillion](https://github.com/takemaru/graphillion) 
 * PySDD 
 
 ## Running the code
