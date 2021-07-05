@@ -9,9 +9,9 @@
 * Python 3 (>=3.6)
 * [Networkx](https://networkx.org/)
 * [Graphillion](https://github.com/takemaru/graphillion) 
-* [PySDD](https://github.com/wannesm/PySDD) 
+* [PySDD](https://github.com/wannesm/PySDD)
 * To install prerequisites in bash 
-* `
+    `
 bash install.sh
 `
 
