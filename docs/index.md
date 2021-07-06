@@ -1,11 +1,14 @@
 
 # Integrating Knowledge Compilation with Reinforcement Learning for Routes
 
-###### International Conference on Automated Planning and Scheduling (ICAPS) 2021
-
 ***
 
+## Introduction
+
+* International Conference on Automated Planning and Scheduling (ICAPS) 2021
+
 ## Minimum prerequisites
+
 * Python 3 (>=3.6)
 * [Networkx](https://networkx.org/)
 * [Graphillion](https://github.com/takemaru/graphillion) 
@@ -14,7 +17,7 @@
 ```
 bash install.sh
 ```
-    It is recommended to install all the dependencies in a conda environment.
+It is recommended to install all the dependencies in a conda environment.
 
 ## Running the code
 To start the training process
