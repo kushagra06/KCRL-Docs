@@ -9,10 +9,21 @@ Code for the paper [**Integrating Knowledge Compilation with Reinforcement Learn
 
 ### Minimum prerequisites
 
+For the training code:
 * Python 3 (>=3.6)
-* [Networkx](https://networkx.org/)
+* Tensorflow (1.7)
+* Tensorboard (1.7)
+* Numpy (1.13)
+* Scipy (1.3)
+* Multiprocessing (0.70)
+* [Networkx](https://networkx.org/) (>=2.4)
+
+For generating and manipulating SDDs:
 * [Graphillion](https://github.com/takemaru/graphillion) 
 * [PySDD](https://github.com/wannesm/PySDD)
+
+Note: For generating and manipulating large maps, install the C++ [top-down compiler for binary hierarchical map](https://github.com/hahaXD/hierarchical_map_compiler) (for constructing hierarchical clustering) and the C++ [PSDD package](https://github.com/hahaXD/psdd) (for multiplying PSDDs). 
+
 * To install prerequisites in bash 
 ```
 bash install.sh
