@@ -40,6 +40,8 @@ python abc.py
 
 ### Generating the results
 
+### Examples
+
 ### Steps to generate an sdd for an open-grid 5x5 map
 * Using Graphillion generate sets of all paths i.e. a GraphSet or a zdd (e.g., using ./scripts/grid.py).
 * Construct a file that maps sdd variables (literals) to edges (e.g., using ./scripts/grid.py).
