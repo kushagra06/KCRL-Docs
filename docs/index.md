@@ -46,5 +46,3 @@ python abc.py
 #### Add constraints
 * To add constraints (e.g., visiting some landmarks), generate another sdd using Graphillion.
 * To combine the main sdd (sdd1) with the constraint sdd (sdd2), conjoin them using the conjoin operation in PySDD. (E.g.,``sdd1.conjoin(sdd2)``)
-
-### Organization
