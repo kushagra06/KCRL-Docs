@@ -9,7 +9,8 @@ Code for the paper [**Integrating Knowledge Compilation with Reinforcement Learn
 
 ### Minimum prerequisites
 
-For the training code:
+#### For the training code:
+
 * Python 3 (>=3.6)
 * Tensorflow (1.7)
 * Tensorboard (1.7)
@@ -18,7 +19,8 @@ For the training code:
 * Multiprocessing (0.70)
 * [Networkx](https://networkx.org/) (>=2.4)
 
-For generating and manipulating SDDs:
+#### For generating and manipulating SDDs:
+
 * [Graphillion](https://github.com/takemaru/graphillion) 
 * [PySDD](https://github.com/wannesm/PySDD)
 
