@@ -14,6 +14,7 @@
 ```
 bash install.sh
 ```
+  It is recommended to install all the dependencies in a conda environment.
 
 ## Running the code
 To start the training process
