@@ -1,11 +1,7 @@
 
-# Integrating Knowledge Compilation with Reinforcement Learning for Routes
-
-***
-
 ## Introduction
 
-* International Conference on Automated Planning and Scheduling (ICAPS) 2021
+Code for the paper [**Integrating Knowledge Compilation with Reinforcement Learning for Routes**](https://ojs.aaai.org/index.php/ICAPS/article/view/16002/15813) published at the 31st *International Conference on Automated Planning and Scheduling (ICAPS) 2021*.
 
 ## Minimum prerequisites
 
