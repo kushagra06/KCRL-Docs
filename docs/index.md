@@ -23,7 +23,7 @@ Code for the paper [**Integrating Knowledge Compilation with Reinforcement Learn
 * [Graphillion](https://github.com/takemaru/graphillion) 
 * [PySDD](https://github.com/wannesm/PySDD)
 
-* To install prerequisites in bash 
+To install prerequisites in bash 
 ```
 bash install.sh
 ```
