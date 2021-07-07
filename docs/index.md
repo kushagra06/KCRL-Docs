@@ -13,7 +13,6 @@ Code for the paper [**Integrating Knowledge Compilation with Reinforcement Learn
 
 * Python 3 (>=3.6)
 * Tensorflow (1.7)
-* Tensorboard (1.7)
 * Numpy (1.13)
 * Scipy (1.3)
 * Multiprocessing (0.70)
