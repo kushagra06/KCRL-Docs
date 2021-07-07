@@ -15,7 +15,7 @@ Code for the paper [**Integrating Knowledge Compilation with Reinforcement Learn
 * Tensorflow (1.7)
 * Numpy (1.13)
 * Scipy (1.3)
-* Multiprocess (0.70)
+* Pathos
 * [Networkx](https://networkx.org/) (>=2.4)
 
 #### For generating and manipulating SDDs:
