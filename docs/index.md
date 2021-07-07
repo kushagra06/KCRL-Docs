@@ -43,8 +43,9 @@ in the kcrl/PythonScripts folder
 
 Consider a 5x5 open grid map with 5 landmarks indicated as flags. Use the default parameters to train the agent for this setting.
 
+To test another setting, you will need to generate your own sdd/psdd and convert the sdd/psdd into intermediate json files using pypsdd/sdd2json.py script.
 
-### Steps to generate an sdd for an open grid 5x5 map
+#### Steps to generate an sdd for an open grid 5x5 map
 * Using Graphillion generate sets of all paths i.e. a GraphSet or a zdd (e.g., using ./scripts/grid.py).
 * Construct a file that maps sdd variables (literals) to edges (e.g., using ./scripts/grid.py).
 * Convert the above generated zdd into sdd using *zdd2sdd* script.
@@ -52,7 +53,7 @@ Consider a 5x5 open grid map with 5 landmarks indicated as flags. Use the defaul
 python zdd2sdd.py 5x5_icaps.zdd
 ```
 
-#### Add constraints
+##### Add constraints
 * To add constraints (e.g., visiting some landmarks), generate another sdd using Graphillion. (Use the script landmarks_constraint.py)
 * To combine the main sdd (sdd1) with the constraint sdd (sdd2), conjoin them using the conjoin operation in PySDD. (E.g.,`sdd1.conjoin(sdd2)`)
 
