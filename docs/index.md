@@ -53,7 +53,7 @@ To test another setting, you will need to generate your own sdd/psdd and convert
 python zdd2sdd.py 5x5_icaps.zdd
 ```
 
-##### Add constraints
+#### Add constraints
 * To add constraints (e.g., visiting some landmarks), generate another sdd using Graphillion. (Use the script landmarks_constraint.py)
 * To combine the main sdd (sdd1) with the constraint sdd (sdd2), conjoin them using the conjoin operation in PySDD. (E.g.,`sdd1.conjoin(sdd2)`)
 
