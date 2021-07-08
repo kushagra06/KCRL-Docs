@@ -30,7 +30,7 @@ bash install.sh
 It is recommended to install all the dependencies in a conda environment.
 
 ## Running the code
-To start the training process, run
+To start the training process with default parameters and settings, run
 ```
 python DCRL.py
 ```
