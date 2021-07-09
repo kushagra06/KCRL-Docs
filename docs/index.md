@@ -44,7 +44,7 @@ in the kcrl/PythonScripts folder
 
 Consider a 5x5 open grid map with 5 landmarks indicated as flags. Use the default parameters to train the agent for this setting.
 
-To test another setting, you will need to generate your own sdd/psdd and convert the sdd/psdd into intermediate json files using pypsdd/sdd2json.py script.
+To test another setting, you will need to generate your own sdd/psdd and convert the sdd/psdd into intermediate json files using `pypsdd/sdd2json.py` script.
 
 #### Steps to generate an sdd for an open grid 5x5 map
 
@@ -64,8 +64,9 @@ python zdd2sdd.py 5x5_icaps.zdd
 To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20), we used hierarchical clustering as defined in the papers [*Tractability in Structured Probability Spaces*](https://proceedings.neurips.cc/paper/2017/file/deb54ffb41e085fd7f69a75b6359c989-Paper.pdf) and [*Structured Bayesian Networks: From Inference to Learning with Routes*](https://ojs.aaai.org//index.php/AAAI/article/view/4796), and implemented in the C++ package [top-down compiler for binary hierarchical map](https://github.com/hahaXD/hierarchical_map_compiler). To [multiply](https://proceedings.neurips.cc/paper/2016/file/5a7f963e5e0504740c3a6b10bb6d4fa5-Paper.pdf) such decision diagrams we used the [PSDD](https://github.com/hahaXD/psdd) C++ package.
 
 * Install the packages: [top-down compiler for binary hierarchical map](https://github.com/hahaXD/hierarchical_map_compiler) and [PSDD](https://github.com/hahaXD/psdd).
-  * Use CMakeLists.txt provided in the `./scripts` folder to compile the C++ PSDD package.
+  * Use CMakeLists.txt provided in the `scripts` folder to compile the C++ PSDD package.
 * Constructing Decision Diagrams:
-  * Construct a psdd for a hierarchically clustered map by following the instructions in the [hierarchical map compiler](https://github.com/hahaXD/hierarchical_map_compiler) package. Use `map_network.cpp` provided in the `./scripts` folder instead of the one provided in the hierarchical map compiler package (to save a dictionary of edge names and variables which is used later in the training code). Example hierarchical json map files are provided in the `./Data` folder.
+  * Construct a psdd for a hierarchically clustered map by following the instructions in the [hierarchical map compiler](https://github.com/hahaXD/hierarchical_map_compiler) package. Use `map_network.cpp` provided in the `scripts` folder instead of the one provided in the hierarchical map compiler package (to save a dictionary of edge names and variables which is used later in the training code). Example hierarchical json map files are provided in the `Data` folder.
   * For constraints, construct an sdd using the PySDD package as described above.
-* Combine (P)SDDs, using the multiplication operation provided in the PSDD C++ package. (You can use the `./scripts/paths_psdd_mult.cpp`).
+* Combine (P)SDDs using the multiplication operation provided in the PSDD C++ package to generate the final decision diagram. (You can use the `scripts/paths_psdd_mult.cpp`).
+* Generate the intermediate json files using `pypsdd/sdd2json.py` and use these files to run the training code.
