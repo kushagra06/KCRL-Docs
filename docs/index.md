@@ -59,4 +59,7 @@ python zdd2sdd.py 5x5_icaps.zdd
 To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20), we used hierarchical clustering as defined in the papers [*Tractability in Structured Probability Spaces*](https://proceedings.neurips.cc/paper/2017/file/deb54ffb41e085fd7f69a75b6359c989-Paper.pdf) and [*Structured Bayesian Networks: From Inference to Learning with Routes*](https://ojs.aaai.org//index.php/AAAI/article/view/4796), and implemented in the C++ package [top-down compiler for binary hierarchical map](https://github.com/hahaXD/hierarchical_map_compiler). To multiply such decision diagrams we used the [PSDD](https://github.com/hahaXD/psdd) C++ package.
 
 * Install the packages: [top-down compiler for binary hierarchical map](https://github.com/hahaXD/hierarchical_map_compiler) and [PSDD](https://github.com/hahaXD/psdd).
-  * Use the CMakeLists.txt provided in the scripts folder to compile the C++ PSDD package.
+  * Use CMakeLists.txt provided in the `./scripts` folder to compile the C++ PSDD package.
+* Constructing Decision Diagrams:
+  * Construct a psdd for a hierarchically clustered map by follow the instructions provided in the [hierarchical map compiler](https://github.com/hahaXD/hierarchical_map_compiler) package. Use a json map file similar to the ones provided in the `./Data` folder.
+  * To construct a
