@@ -68,5 +68,5 @@ To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20),
 * Constructing Decision Diagrams:
   - Construct a psdd for a hierarchically clustered map by following the instructions in the [hierarchical map compiler](https://github.com/hahaXD/hierarchical_map_compiler) package. Use `map_network.cpp` provided in the `scripts` folder instead of the one provided in the hierarchical map compiler package (to save a dictionary of edge names and variables which is used later in the training code). Example hierarchical json map files are provided in the `Data` folder.
    - For constraints, construct an sdd using the PySDD package as described above.
-* Combine (P)SDDs using the multiplication operation provided in the PSDD C++ package to generate the final decision diagram. (You can use the `scripts/paths_psdd_mult.cpp`).
+* Combine (P)SDDs using the multiplication operation provided in the PSDD C++ package to generate the final decision diagram. (You can use `scripts/paths_psdd_mult.cpp`. You can also convert the constraint SDD to PSDD in the mutliplication script itself.).
 * Generate the intermediate json files using `pypsdd/sdd2json.py` and use these files to run the training code.
