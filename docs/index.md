@@ -52,9 +52,11 @@ To test another setting, you will need to generate your own sdd/psdd and convert
 ```
 python zdd2sdd.py 5x5_icaps.zdd
 ```
-
 #### Add constraints
 * To add constraints (e.g., visiting some landmarks), generate another sdd using Graphillion. (Use the script landmarks_constraint.py)
 * To combine the main sdd (sdd1) with the constraint sdd (sdd2), conjoin them using the conjoin operation in PySDD. (E.g.,`sdd1.conjoin(sdd2)`)
 
-Note: To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20), we used hierarchical clustering as defined in the papers [*Tractability in Structured Probability Spaces*](https://proceedings.neurips.cc/paper/2017/file/deb54ffb41e085fd7f69a75b6359c989-Paper.pdf) and [*Structured Bayesian Networks: From Inference to Learning with Routes*](https://ojs.aaai.org//index.php/AAAI/article/view/4796), and implemented in the C++ package [top-down compiler for binary hierarchical map](https://github.com/hahaXD/hierarchical_map_compiler). To multiply such decision diagrams we used the [PSDD](https://github.com/hahaXD/psdd) C++ package.
+To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20), we used hierarchical clustering as defined in the papers [*Tractability in Structured Probability Spaces*](https://proceedings.neurips.cc/paper/2017/file/deb54ffb41e085fd7f69a75b6359c989-Paper.pdf) and [*Structured Bayesian Networks: From Inference to Learning with Routes*](https://ojs.aaai.org//index.php/AAAI/article/view/4796), and implemented in the C++ package [top-down compiler for binary hierarchical map](https://github.com/hahaXD/hierarchical_map_compiler). To multiply such decision diagrams we used the [PSDD](https://github.com/hahaXD/psdd) C++ package.
+
+* Install the packages: [top-down compiler for binary hierarchical map](https://github.com/hahaXD/hierarchical_map_compiler) and [PSDD](https://github.com/hahaXD/psdd).
+  * Use the CMakeLists.txt provided in the scripts folder to compile the C++ PSDD package.
