@@ -56,12 +56,12 @@ python zdd2sdd.py 5x5_icaps.zdd
 ```
 #### Add constraints
 
-* To add constraints (e.g., visiting some landmarks), generate another sdd using PySDD. (Use the script landmarks_constraint.py)
+* To add constraints (e.g., visiting some landmarks), generate another sdd using PySDD. (E.g., use the script landmarks_constraint.py)
 * To combine the main sdd (sdd1) with the constraint sdd (sdd2), conjoin them using the conjoin operation in PySDD. (E.g.,`sdd1.conjoin(sdd2)`)
 
 #### Large Maps
 
-To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20), we used hierarchical clustering as defined in the papers [*Tractability in Structured Probability Spaces*](https://proceedings.neurips.cc/paper/2017/file/deb54ffb41e085fd7f69a75b6359c989-Paper.pdf) and [*Structured Bayesian Networks: From Inference to Learning with Routes*](https://ojs.aaai.org//index.php/AAAI/article/view/4796), and implemented in the C++ package [top-down compiler for binary hierarchical map](https://github.com/rlr-smu/hierarchical_map_compiler). To [multiply](https://proceedings.neurips.cc/paper/2016/file/5a7f963e5e0504740c3a6b10bb6d4fa5-Paper.pdf) such decision diagrams we used the [PSDD](https://github.com/rlr-smu/psdd-1) C++ package.
+To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20), we used hierarchical clustering as defined in the papers [*Tractability in Structured Probability Spaces*](https://proceedings.neurips.cc/paper/2017/file/deb54ffb41e085fd7f69a75b6359c989-Paper.pdf) and [*Structured Bayesian Networks: From Inference to Learning with Routes*](https://ojs.aaai.org//index.php/AAAI/article/view/4796), and implemented in the C++ package [top-down compiler for binary hierarchical map](https://github.com/rlr-smu/hierarchical_map_compiler). To [multiply](https://proceedings.neurips.cc/paper/2016/file/5a7f963e5e0504740c3a6b10bb6d4fa5-Paper.pdf) such decision diagrams we used the [PSDD](https://github.com/rlr-smu/psdd-1) C++ package. We also use the [PyPSDD](https://github.com/art-ai/pypsdd) code to generate some input files for the training code. (PyPSDD is included in this repo). 
 
 * Install the packages: [top-down compiler for binary hierarchical map](https://github.com/rlr-smu/hierarchical_map_compiler) and [PSDD](https://github.com/rlr-smu/psdd-1).
 * Constructing Decision Diagrams:
