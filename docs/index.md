@@ -59,7 +59,7 @@ python zdd2sdd.py 5x5_icaps.zdd
 * To add constraints (e.g., visiting some landmarks), generate another sdd using PySDD. (E.g., use the script landmarks_constraint.py)
 * To combine the main sdd (sdd1) with the constraint sdd (sdd2), conjoin them using the conjoin operation in PySDD. (E.g.,`sdd1.conjoin(sdd2)`)
 
-#### Large Maps
+#### Large Maps Overview
 
 To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20), we used hierarchical clustering as defined in the papers [*Tractability in Structured Probability Spaces*](https://proceedings.neurips.cc/paper/2017/file/deb54ffb41e085fd7f69a75b6359c989-Paper.pdf) and [*Structured Bayesian Networks: From Inference to Learning with Routes*](https://ojs.aaai.org//index.php/AAAI/article/view/4796), and implemented in the C++ package [top-down compiler for binary hierarchical map](https://github.com/rlr-smu/hierarchical_map_compiler). To [multiply](https://proceedings.neurips.cc/paper/2016/file/5a7f963e5e0504740c3a6b10bb6d4fa5-Paper.pdf) such decision diagrams we used the [PSDD](https://github.com/rlr-smu/psdd-1) C++ package. We also use the [PyPSDD](https://github.com/art-ai/pypsdd) code to generate some input files for the training code. (PyPSDD is also included in this repo). 
 
@@ -69,3 +69,12 @@ To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20),
     2. For constraints, construct an sdd using the PySDD package as described above.
 * Combine (P)SDDs using the multiplication operation provided in the PSDD C++ package to generate the final decision diagram. (You can use `scripts/paths_psdd_mult.cpp` which is also provided in the `psdd-1` repo. You can also convert the constraint SDD to PSDD in the mutliplication script itself.).
 * Generate the intermediate json files using `pypsdd/sdd2json.py` and use these files to run the training code.
+
+#### Generating a psdd for a 10x10 open grid
+
+* Create a json file that has all the information about the map and clusters. [Here's](https://github.com/rlr-smu/kcrl-icaps21/blob/main/data/sddFiles/10x10/10x10.json) an example for 10x10.
+* Create a directory `tmp_dir` for temporary files. Input the json file to the hierarchical map compiler.
+```
+./hmc_main <path to 10x10.json> ../script/compile_graph.py tmp_dir <thread_num> <ourput_psdd_filename> <output_vtree_filename>
+```
+* The output psdd will encode paths between all pairs of nodes with binary hierarchical clustering.
