@@ -73,8 +73,28 @@ To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20),
 #### Generating a psdd for a 10x10 open grid
 
 * Create a json file that has all the information about the map and clusters. [Here's](https://github.com/rlr-smu/kcrl-icaps21/blob/main/data/sddFiles/10x10/10x10.json) an example for 10x10.
-* Create a directory `tmp_dir` for temporary files. Input the json file to the hierarchical map compiler.
+    1. For 10x10, we add extra nodes (super nodes) for all the source and destination nodes to use them as evidence in our inference method. 
+* Create an empty directory `tmp_dir` for temporary files. Input the json file to the hierarchical map compiler to get the output psdd.
 ```
 ./hmc_main <path to 10x10.json> ../script/compile_graph.py tmp_dir <thread_num> <ourput_psdd_filename> <output_vtree_filename>
 ```
-* The output psdd will encode paths between all pairs of nodes with binary hierarchical clustering.
+* The output psdd will encode paths between all pairs of nodes with binary hierarchical clustering. You will also get a file that maps edge names to psdd variables (literls) `edge_var_map.txt`.
+
+#### Adding constraints
+
+Landmarks constraints: Visit each of the landmarks before reaching the destination. We construct these constraints using the PySDD package. More details in the paper.
+
+* To add landmarks constraints, use `scripts/landmarks_constraints.py`. In the code, you'll need to change the `edge_var_map` file and the vtree file to the files that you got in the previous step.
+* Also change the `landmarks` list in the code according to landmarks of your choice.
+* Run the code (python3) `python landmarks_constraints.py` to get the sdd for landmarks constraints.
+
+#### Combining the main psdd with the constraint sdd
+
+* Use `scripts/paths_psdd_mult` file for multiplying the two (p)sdds. (Using the psdd C++ package).
+* Change the vtree, sdd, and psdd file paths in the code.
+* Read the input psdd file. Also, convert the sdd into psdd using `ConvertSddToPsdd` method in `PsddManager` class and change the name of the output file appropriately.
+* Run the code.
+```
+g++ -no-pie paths_psdd_mult.cpp src/psdd_manager.cpp src/psdd_node.cpp src/psdd_parameter.cpp src/psdd_unique_table.cpp src/random_double_generator.cpp -Iinclude -Llib/linux -lsdd -lgmp
+```
+* The output psdd is a combination (multiplication) of the main psdd and the constraint sdd.
