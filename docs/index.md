@@ -90,11 +90,13 @@ Landmarks constraints: Visit each of the landmarks before reaching the destinati
 
 #### Combining the main psdd with the constraint sdd
 
-* Use `scripts/paths_psdd_mult` file for multiplying the two (p)sdds. (Using the psdd C++ package).
+* Use `scripts/paths_psdd_mult.cpp` file for multiplying the two (p)sdds. (Using the psdd C++ package).
 * Change the vtree, sdd, and psdd file paths in the code.
 * Read the input psdd file. Also, convert the sdd into psdd using `ConvertSddToPsdd` method in `PsddManager` class and change the name of the output file appropriately.
 * Run the code.
 ```
 g++ -no-pie paths_psdd_mult.cpp src/psdd_manager.cpp src/psdd_node.cpp src/psdd_parameter.cpp src/psdd_unique_table.cpp src/random_double_generator.cpp -Iinclude -Llib/linux -lsdd -lgmp
 ```
-* The output psdd is a combination (multiplication) of the main psdd and the constraint sdd.
+* The final output psdd is a combination (multiplication) of the main psdd and the constraint sdd.
+
+Use this final psdd to construct the intermediate json files using `sdd2json.py` and run the training code.
