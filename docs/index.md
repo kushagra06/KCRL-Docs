@@ -9,6 +9,14 @@ Code for the paper [**Integrating Knowledge Compilation with Reinforcement Learn
 
 ### Minimum prerequisites
 
+To install prerequisites in bash 
+```
+bash install.sh
+```
+It is recommended to install all the dependencies in a conda environment.
+
+Or install the following list of packages one-by-one manually (using pip).
+
 #### For the training code:
 
 * Python 3 (>=3.6)
@@ -22,12 +30,6 @@ Code for the paper [**Integrating Knowledge Compilation with Reinforcement Learn
 
 * [Graphillion](https://github.com/takemaru/graphillion) 
 * [PySDD](https://github.com/wannesm/PySDD)
-
-To install prerequisites in bash 
-```
-bash install.sh
-```
-It is recommended to install all the dependencies in a conda environment.
 
 ## Running the code
 
@@ -84,15 +86,15 @@ To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20),
 
 Landmarks constraints: Visit each of the landmarks before reaching the destination. We construct these constraints using the PySDD package. More details in the paper.
 
-* To add landmarks constraints, use `scripts/landmarks_constraints.py`. In the code, you'll need to change the `edge_var_map` file and the vtree file to the files that you got in the previous step.
-* Also change the `landmarks` list in the code according to landmarks of your choice.
+* To add landmarks constraints, use `scripts/landmarks_constraints.py`. In the code, you'll need to change the edge var file and the vtree file to the files that you got in the previous step. According change the json map file.
+* Specify your landmarks in the `landmarks` list.
 * Run the code (python3) `python landmarks_constraints.py` to get the sdd for landmarks constraints.
 
 #### Combining the main psdd with the constraint sdd
 
-* Use `scripts/paths_psdd_mult.cpp` file for multiplying the two (p)sdds. (Using the psdd C++ package).
+We can multiply two psdds, one sdd and a psdd, or two sdds using the psdd C++ package. We need to convert all sdds to psdds to perform multiplication. Use `scripts/paths_psdd_mult.cpp` file to execute this operation.
 * Change the vtree, sdd, and psdd file paths in the code.
-* Read the input psdd file. Also, convert the sdd into psdd using `ConvertSddToPsdd` method in `PsddManager` class and change the name of the output file appropriately.
+* All the sdds should be converted into psdds using `ConvertSddToPsdd` method in `PsddManager` class. Change the name of the output file appropriately.
 * Run the code.
 ```
 g++ -no-pie paths_psdd_mult.cpp src/psdd_manager.cpp src/psdd_node.cpp src/psdd_parameter.cpp src/psdd_unique_table.cpp src/random_double_generator.cpp -Iinclude -Llib/linux -lsdd -lgmp
