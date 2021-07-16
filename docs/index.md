@@ -74,7 +74,7 @@ To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20),
 
 #### Generating a psdd for a 10x10 open grid
 
-<img src="./images/hier_clust.jpg" alt="Hierarchical Clustering Tree" width="200" height="150">
+<img src="./images/hier_clust.jpg" alt="Hierarchical Clustering Tree" width="" height="">
 
 * Create a json file that has all the information about the map and clusters. [Here's](https://github.com/rlr-smu/kcrl-icaps21/blob/main/data/sddFiles/10x10/10x10.json) an example for 10x10.
     1. For 10x10, we add extra nodes (super nodes) for all the source and destination nodes to use them as evidence in our inference method. 
