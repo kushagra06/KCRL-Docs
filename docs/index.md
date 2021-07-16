@@ -72,14 +72,14 @@ To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20),
 * Combine (P)SDDs using the multiplication operation provided in the PSDD C++ package to generate the final decision diagram. (You can use `scripts/paths_psdd_mult.cpp` which is also provided in the `psdd-1` repo. You can also convert the constraint SDD to PSDD in the mutliplication script itself.).
 * Generate the intermediate json files using `pypsdd/sdd2json.py` and use these files to run the training code.
 
-#### Generating a psdd for a 10x10 open grid
+#### Generating a psdd for a 10x10 open grid using binary hierarchical clustering
 
 <img src="./images/hier_clust.jpg" alt="Hierarchical Clustering Tree" width="" height="">
 
-<img src="./images/map_clust.jpg" alt="Hierarchical Clustering Map" width="350" height="300">
+<img src="./images/map_clust.jpg" alt="Hierarchical Clustering Map" width="" height="">
 
-* Create a json file that has all the information about the map and clusters. [Here's](https://github.com/rlr-smu/kcrl-icaps21/blob/main/data/sddFiles/10x10/10x10.json) an example for 10x10.
-    1. For 10x10, we add extra nodes (super nodes) for all the source and destination nodes to use them as evidence in our inference method. 
+* Create a json file that has all the information about the map and clusters. [Here's](https://github.com/rlr-smu/kcrl-icaps21/blob/main/data/sddFiles/10x10/10x10.json) an example for 10x10 corresponding to the above figure.
+    1. We add extra nodes (super nodes; 101-120) for all the source and destination nodes to use them as evidence in our inference method. 
 * Create an empty directory `tmp_dir` for temporary files. Input the json file to the hierarchical map compiler to get the output psdd.
 ```
 ./hmc_main <path to 10x10.json> ../script/compile_graph.py tmp_dir <thread_num> <ourput_psdd_filename> <output_vtree_filename>
