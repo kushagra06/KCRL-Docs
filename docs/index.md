@@ -65,7 +65,7 @@ python zdd2sdd.py 5x5_icaps.zdd
 
 To generate and manipulate decision diagrams for large maps (e.g. 10x10, 20x20), we used hierarchical clustering as defined in the papers [*Tractability in Structured Probability Spaces*](https://proceedings.neurips.cc/paper/2017/file/deb54ffb41e085fd7f69a75b6359c989-Paper.pdf) and [*Structured Bayesian Networks: From Inference to Learning with Routes*](https://ojs.aaai.org//index.php/AAAI/article/view/4796), and implemented in the C++ package [top-down compiler for binary hierarchical map](https://github.com/rlr-smu/hierarchical_map_compiler). To [multiply](https://proceedings.neurips.cc/paper/2016/file/5a7f963e5e0504740c3a6b10bb6d4fa5-Paper.pdf) such decision diagrams we used the [PSDD](https://github.com/rlr-smu/psdd-1) C++ package. We also use the [PyPSDD](https://github.com/art-ai/pypsdd) code to generate some input files for the training code. (PyPSDD is also included in this repo). 
 
-* Install the packages: [top-down compiler for binary hierarchical map](https://github.com/rlr-smu/hierarchical_map_compiler) and [PSDD](https://github.com/rlr-smu/psdd-1).
+* Install the packages: [top-down compiler for binary hierarchical map](https://github.com/rlr-smu/hierarchical_map_compiler) and [PSDD](https://github.com/rlr-smu/psdd-1). (Installation tested on Ubuntu 18.04 x86_64)
 * Constructing Decision Diagrams:
     1. Construct a psdd for a hierarchically clustered map by following the instructions in the [hierarchical map compiler](https://github.com/hahaXD/hierarchical_map_compiler) package. Example hierarchical json map files are provided in the `Data` folder.
     2. For constraints, construct an sdd using the PySDD package as described above.
