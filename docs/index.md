@@ -97,6 +97,7 @@ Landmarks constraints: Visit each of the landmarks before reaching the destinati
 #### Combining the main psdd with the constraint sdd
 
 We can multiply two psdds, one sdd and a psdd, or two sdds using the psdd C++ package. We need to convert all sdds to psdds to perform multiplication. Use `scripts/paths_psdd_mult.cpp` file to execute this operation.
+
 * Change the vtree, sdd, and psdd file paths in the code.
 * All the sdds should be converted into psdds using `ConvertSddToPsdd` method in `PsddManager` class. Change the name of the output file appropriately.
 * Run the code.
